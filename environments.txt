@@ -10,3 +10,5 @@ papermill==2.5.0
 scrapbook==0.5.0
 ipython==8.16.0
 ipython-genutils==0.2.0
+nbconvert==7.16.3
+notebook==7.1.2
