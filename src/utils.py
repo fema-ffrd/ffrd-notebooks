@@ -112,10 +112,15 @@ def get_projection(hdf_file_path: str):
     """
     Get the projection coordinate reference system from the HDF plan file
 
+    Parameters
+    ----------
+    hdf_file_path : str
+        The file path to the HDF file
+
     Returns
     -------
-    CRS
-        The projection of the RAS geometry.
+    hdf_proj
+        The projection of the HDF file
     """
     # open hdf from s3 uri
     if hdf_file_path.startswith("s3://"):
@@ -195,24 +200,6 @@ def get_cell_pts(hdf_file_path: str, domain_name: str):
             # assign to a dataframe
             gdf = create_xy_gdf(hdf_path, hdf_crs)
             return gdf
-
-    # # open the hdf file
-    # with h5py.File(hdf_file_path, 'r') as f:
-    #     # navigate to the key path
-    #     f = f[f'Geometry/2D Flow Areas/{domain_name}/Cells Center Coordinate']
-    #     # assign to a dataframe
-    #     df = pd.DataFrame(f)
-    #     cells = df.index
-    #     # rename the columns to x and y
-    #     df.columns = ['x', 'y']
-    #     # convert both columns to numeric
-    #     df['x'] = pd.to_numeric(df['x'])
-    #     df['y'] = pd.to_numeric(df['y'])
-    #     # convert to a spatial geopandas dataframe
-    #     gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df['x'], df['y']), crs = hdf_crs)
-    #     gdf['Cell'] = cells
-    #     return gdf
-
 
 def get_perimeter(hdf_file_path: str, domain_name: str):
     """

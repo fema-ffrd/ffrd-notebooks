@@ -301,10 +301,6 @@ def read_hdf_wse_errors(hdf_file_path: str, domain_name: str):
         The file path to the HDF file
     domain_name : str
         The name of the domain in the HDF file
-    threshold : float
-        The threshold for the histogram's x-axis
-    output_directory : str
-        The file path to the output directory
 
     Returns
     -------
@@ -535,8 +531,6 @@ def wse_error_qc(plan_file: str, domain_name: str):
 
     Parameters
     ----------
-    geometry_file : str
-        The file path to the HDF geometry file
     plan_file : str
         The file path to the HDF plan file
     domain_name : str
