@@ -1,0 +1,29 @@
+name: base
+channels:
+- anaconda
+- conda-forge
+- plotly
+dependencies:
+- python=3.8
+- pip
+- h5py
+- numpy
+- scikit-learn
+- geocube
+- pandas
+- affine
+- six
+- geopandas
+- folium
+- s3fs
+- fsspec
+- shapely
+- pyproj
+- openpyxl
+- ipykernel
+- ipywidgets
+- notebook
+- pip:
+  - python-dotenv
+
+
